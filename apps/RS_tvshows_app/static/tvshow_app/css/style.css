@@ -1,0 +1,12 @@
+#main {
+    width: 700px;
+}
+h1{
+    color:palevioletred;
+
+}
+.inline{
+    color:cornflowerblue;
+    width: 550px;
+    display:inline-block;
+}
