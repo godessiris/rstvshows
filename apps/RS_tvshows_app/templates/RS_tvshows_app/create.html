@@ -12,13 +12,17 @@
     <link rel="stylesheet" href="{% static '/RS_tvshows_app/css/style.css' %}">
 
     <style>
-    .inline{
-    color:cornflowerblue;
-    width: 550px;
-    display:inline-block;
-}
+        #main {
+            width: 700px;
+        }
+
+        .inline {
+            color: cornflowerblue;
+            width: 550px;
+            display: inline-block;
+        }
     </style>
-   
+
 </head>
 
 <body>
@@ -28,6 +32,13 @@
             <a href="/shows" class="font-weight-bold">Go Back</a>
         </div>
         <div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
             <form action="/shows/create" method="POST" class="form-group">
                 {% csrf_token%}
                 <label for="title">Title:</label>

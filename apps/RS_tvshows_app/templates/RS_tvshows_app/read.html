@@ -54,7 +54,13 @@
         <a href="/shows/{{show.id}}/edit" class="btn btn-sm btn-primary mb-3">
             << Edit </a> | <a href="/shows/{{show.id}}/destroy" class="btn btn-sm btn-secondary mb-3">Delete
         </a>
-
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
 
 
 </body>
